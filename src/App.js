@@ -6,7 +6,8 @@ function App() {
   const [mynumber, setnumber] = useState("");
   const [otp, setotp] = useState("");
  const handleChange = (e) =>{
-   
+   setnumber(e.target.value);
+   setotp(e.target.value);
  }
   const configureCaptcha = () =>{
     window.recaptchaVerifier= new firebase.auth.RecaptchaVerifier('sign-in-button', {
@@ -22,7 +23,7 @@ function App() {
  const onSignInSubmit = (e) => {
     e.preventDefault()
     configureCaptcha()
-    const phoneNumber = "+91" + useState.mynumber
+    const phoneNumber = "+91" + mynumber
     console.log(phoneNumber)
     const appVerifier = window.recaptchaVerifier;
     firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
@@ -40,7 +41,7 @@ function App() {
   }
   const onSubmitOTP = (e) =>{
     e.preventDefault()
-    const code = useState.OTP
+    const code = otp
     console.log(code)
     window.confirmationResult.confirm(code).then((result) => {
       // User signed in successfully.
