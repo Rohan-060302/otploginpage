@@ -58,19 +58,29 @@ function App() {
   return (
     <div className='h-screen flex bg-red border-2'>
       <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16'>
-        <h2 className='font-medium text-primary mt-4 mb-12 text-center'>Login Form</h2>
+        <h1 className='font-large text-primary mt-4 mb-12 text-center'><b><u>Login Form</u></b></h1>
         <form onSubmit={onSignInSubmit}>
-          <div id="sign-in-button"></div>
+        <div id="sign-in-button"></div>
+        Enter First Name:
+        <input type="text" placeholder='First Name' className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
+            required />
+         Enter Last Name:
+            <input type="text" placeholder='Last Name' className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
+            required />
+          Enter Email-ID:
+            <input type="email" placeholder='Email-ID' className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
+            required />
+          Enter Phone Number:
           <input type="number" name={mobileNumber} placeholder="Mobile number" className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
             required onChange={(e) => setMobileNumber(e.target.value)} />
-          <button type="submit" className={`bg-green py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark`}>Submit</button>
+          <button type="submit" className={`bg-green py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark`}>Get OTP</button>
         </form>
 
         <h2>Enter OTP</h2>
         <form onSubmit={onSubmitOTP}>
           <input type="number" name={otp} placeholder="OTP Number" className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
             required onChange={(e) => setOtp(e.target.value)} />
-          <button type="submit" className={`bg-green py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark`}>Submit</button>
+          <button type="submit" className={`bg-green py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark`}>Submit OTP And Login</button>
         </form>
       </div>
     </div>
